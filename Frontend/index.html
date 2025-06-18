@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinandan: The Wedding Land</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #ff758f;
+            color: #4b4b4b;
+        }
+        header {
+            background-color: #ff758f;
+            color: #4b4b4b;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #ffd6e0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ffd6e0;
+            padding: 10px;
+            border-bottom: 2px solid #ffe5ec;
+        }
+        nav a {
+            color: #4b4b4b;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #ffe5ec;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('background.jpg') no-repeat center center/cover;
+            color: #4b4b4b;
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px #ffd6e0;
+        }
+        .hero p {
+            font-size: 20px;
+            margin: 20px 0 0;
+        }
+        .content {
+            padding: 30px;
+            text-align: center;
+            background-color: #ffffff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            margin-top: 0;
+            color: #d81b60;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #d81b60;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .buttons a:hover {
+            background-color: #ff80ab;
+        }
+        .feedback {
+            padding: 30px;
+            text-align: center;
+            background-color: #fff0f5;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .feedback h2 {
+            margin-top: 0;
+            color: #a34e69;
+        }
+        .feedback textarea {
+            width: 80%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #d81b60;
+            border-radius: 5px;
+            font-family: 'Georgia', serif;
+            font-size: 14px;
+        }
+        .feedback button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #d81b60;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .feedback button:hover {
+            background-color: #ff80ab;
+        }
+        footer {
+            background-color: #ffcad4;
+            color: #4b4b4b;
+            text-align: center;
+            padding: 10px;
+            border-top: 5px solid #ffd6e0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Abhinandan: The Wedding Land</h1>
+    <p>Your perfect wedding destination in Jorhat, Assam</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+   
+</nav>
+
+<section class="hero">
+    <h1>Celebrate Your Special Day With Us</h1>
+    <p>Book your dream wedding hall today!</p>
+    <div class="buttons">
+        <a href="booking.html">Book Now</a>
+        <a href="enquiry.html">Enquire Now</a>
+    </div>
+</section>
+
+<section class="content" id="services">
+    <h2>Our Services</h2>
+    <p>From beautiful decor to catering, we provide all the services to make your wedding unforgettable.</p>
+</section>
+
+<section class="content" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="pic1.jpg" alt="Hall Interior">
+        <img src="pic2.jpg" alt="Wedding Stage">
+        <img src="pic6.jpg" alt="Dining Area">
+        <img src="pic4.jpg" alt="Outdoor Decor">
+        <img src="pic5.jpg" alt="Outdoor Decor">
+        <img src="pic3.jpg" alt="Outdoor Decor">
+        
+    </div>
+</section>
+
+<section class="content" id="about">
+    <h2>About Us</h2>
+    <p>Located at Itakhuli Rd, Garmur, Jorhat, Assam, we offer the best facilities to make your wedding a memorable event.</p>
+</section>
+
+<section class="content" id="contact">
+    <h2>Contact Us</h2>
+    <p>Address: Itakhuli Rd, Garmur, Jorhat, Assam 785007</p>
+    <p>Phone: +91-9954452024</p>
+    <p>Email: arabinda@abhinandanweddingland.com</p>
+</section>
+
+
+
+<footer>
+    <p>&copy; 2024 Abhinandan: The Wedding Land. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

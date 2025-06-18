@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enquiry Panel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th {
+      background-color: #ff7f50;
+      color: white;
+      padding: 10px;
+    }
+    td {
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enquiry Panel</h1>
+  <table id="enquiryTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- JS will populate here -->
+    </tbody>
+  </table>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('http://localhost:3000/api/enquiries')
+        .then(res => res.json())
+        .then(data => {
+          const tbody = document.querySelector('#enquiryTable tbody');
+          if (!data.length) {
+            tbody.innerHTML = `<tr><td colspan="4">No enquiries found.</td></tr>`;
+          } else {
+            data.forEach((item, index) => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${item.name}</td>
+                <td>${item.email}</td>
+                <td>${item.message}</td>
+              `;
+              tbody.appendChild(row);
+            });
+          }
+        })
+        .catch(err => {
+          console.error('Failed to load enquiries:', err);
+        });
+    });
+  </script>
+</body>
+</html>

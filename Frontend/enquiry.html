@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry - Abhinandan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Enquiry</h1>
+  </header>
+  <main>
+    <form id="enquiryForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('enquiryForm').addEventListener('submit', async (e) => {
+      e.preventDefault(); // Prevent default form action
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      try {
+        const response = await fetch('http://localhost:3000/enquiry', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, email, message })
+        });
+
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const result = await response.json();
+        alert(result.message);
+        document.getElementById('enquiryForm').reset();
+      } catch (err) {
+        alert('Failed to submit enquiry. Try again later.');
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
